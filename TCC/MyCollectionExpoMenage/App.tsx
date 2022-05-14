@@ -12,7 +12,7 @@ export default function App() {
     <ThemeProvider theme={DarkTheme}>
         <StatusBar style="light" backgroundColor={color(DARKBACKGROUND).darken(0.6).hex()} translucent={false}/>
         <BaseContainer>
-            <Login />
+            <Perfil />
         </BaseContainer>
     </ThemeProvider>
   );
