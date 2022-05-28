@@ -1,12 +1,12 @@
 import style, {Container, ImageCard, ContainerCard, ItemTitle, ItemTitleBold, Title, TitleBold} from './styles';
 
-import {useState} from "react";
+import React, {useState} from "react";
 import {Header} from "../../components/Header";
 
 import {ButtonCard} from "../../components/ButtonCard";
 import {FlatList} from "react-native";
 import {Background} from "../../components/Background";
-import {useNavigation} from "@react-navigation/native";
+// import {useNavigation} from "@react-navigation/native";
 
 
 interface ItensProps {
@@ -20,18 +20,18 @@ interface ItensProps {
 
 export const Listagem: React.FC = () => {
     const [active, setActive] = useState<number>()
-    const navigation = useNavigation<any>()
+    // const navigation = useNavigation<any>()
     return (
         <Background>
             <Header backFalse>
                 <Title><TitleBold>My</TitleBold>Collection</Title>
             </Header>
             <Container>
-                <FlatList<ItensProps>
+                <FlatList<any>
                     renderItem={({item}) => (
                         <ButtonCard item={item} activeId={active} setActive={setActive} addCart={() => {
                         }} goDetail={(id) => {
-                            navigation.push('Detalhes', {id})
+                            // navigation.push('Detalhes', {id})
                         }}/>
                     )}
                     keyExtractor={(item) => `${item.id}`}
