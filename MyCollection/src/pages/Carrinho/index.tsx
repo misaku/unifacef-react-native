@@ -1,4 +1,4 @@
-import {Box, Container, Title, Text, ItemContainer, ActionColumn, Trash} from './styles';
+import {ActionColumn, Box, Container, ItemContainer, Text, Title, Trash} from './styles';
 import {DefaultButton} from "../../components/DefaultButton";
 import React, {useState} from "react";
 import {Header} from "../../components/Header";

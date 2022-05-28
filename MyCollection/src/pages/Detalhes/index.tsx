@@ -1,5 +1,5 @@
 import React from "react";
-import {Container, Title, Text, Box, Image, LastBox} from './styles'
+import {Box, Container, Image, LastBox, Text, Title} from './styles'
 import {Header} from "../../components/Header";
 import {ScrollView} from "react-native";
 import {Background} from "../../components/Background";

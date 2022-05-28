@@ -1,18 +1,18 @@
-import {Container, Title, TitleBold, ContainerSwitch,Switch,LabelSwitch,Link} from './styles';
-import { Input } from '../../components/Input';
+import {Container, ContainerSwitch, LabelSwitch, Link, Switch, Title, TitleBold} from './styles';
+import {Input} from '../../components/Input';
 import {DefaultButton} from "../../components/DefaultButton";
-import React, {useState} from "react";
-import {BACKGROUND_COLOR, PRIMARY, SECUNDARY} from "../../styles/colors";
+import React, {useMemo, useState} from "react";
 import color from "color";
+import {useMyTheme} from "../../hooks/Theme.hooks";
 
-const PLACEHOLDER_COLOR = color(BACKGROUND_COLOR).lighten(0.5).hex();
-const PLACEHOLDER_COLOR_DARKEN = color(BACKGROUND_COLOR).darken(0.25).hex();
 
 export const Login:React.FC=()=>{
     const [load,setload] =useState<boolean>(false)
     const [saveLogin, setSaveLogin] = useState<boolean>(false)
     const changeSaveLogin =()=> setSaveLogin(current=>!current)
-
+    const { theme } = useMyTheme();
+    const PLACEHOLDER_COLOR = useMemo(()=>color(theme.colors.background).lighten(0.5).hex(),[theme]);
+    const PLACEHOLDER_COLOR_DARKEN = useMemo(()=>color(theme.colors.background).darken(0.25).hex(),[theme]);
     const change= async ()=>{
         setload(true);
         await (new Promise(resolve => setTimeout(resolve,2000)))
@@ -27,8 +27,8 @@ export const Login:React.FC=()=>{
             <Switch
                 onChange={changeSaveLogin}
                 value={saveLogin}
-                thumbColor={SECUNDARY}
-                trackColor={{true: PRIMARY, false: PLACEHOLDER_COLOR_DARKEN}}
+                thumbColor={theme.colors.secondary}
+                trackColor={{true: theme.colors.primary, false: PLACEHOLDER_COLOR_DARKEN}}
             />
             <LabelSwitch>PERMANECER LOGADO</LabelSwitch>
         </ContainerSwitch>

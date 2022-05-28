@@ -1,14 +1,15 @@
-import React, {useState} from 'react';
-import {InputElement, InputContainer} from './styles';
+import React, {useMemo, useState} from 'react';
+import {InputContainer, InputElement} from './styles';
 import {TextInputProps} from 'react-native';
 import {FontAwesome5} from '@expo/vector-icons';
 import color from "color";
-import {BACKGROUND_COLOR} from "../../styles/colors";
+import {useMyTheme} from "../../hooks/Theme.hooks";
 
-const PLACEHOLDER_COLOR = color(BACKGROUND_COLOR).lighten(0.5).hex();
 
 export const Input:React.FC<TextInputProps> = ({children,secureTextEntry=false, ...rest}) =>{
     const [securety, setSecurety] = useState<boolean>(secureTextEntry)
+    const { theme } = useMyTheme()
+    const PLACEHOLDER_COLOR = useMemo(()=>color(theme.colors.background).lighten(0.5).hex(), [theme]);
     const changeSecure = ()=>setSecurety(sec=>!sec);
     return (
     <InputContainer>

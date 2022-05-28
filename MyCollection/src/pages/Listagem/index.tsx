@@ -1,4 +1,4 @@
-import style, {Container, ImageCard, ContainerCard, ItemTitle, ItemTitleBold, Title, TitleBold} from './styles';
+import style, {Container, Title, TitleBold} from './styles';
 
 import React, {useState} from "react";
 import {Header} from "../../components/Header";
@@ -6,6 +6,7 @@ import {Header} from "../../components/Header";
 import {ButtonCard} from "../../components/ButtonCard";
 import {FlatList} from "react-native";
 import {Background} from "../../components/Background";
+
 // import {useNavigation} from "@react-navigation/native";
 
 

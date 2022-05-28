@@ -1,7 +1,8 @@
-import { ImageCard, ContainerCard, ItemTitle, ItemTitleBold, ContainerButton, Container} from './styles';
+import {Container, ContainerButton, ContainerCard, ImageCard, ItemTitle, ItemTitleBold} from './styles';
 import {DefaultButton} from "../DefaultButton";
-import {Alert, NativeModules, TouchableWithoutFeedback, LayoutAnimation} from "react-native";
+import {LayoutAnimation, NativeModules, TouchableWithoutFeedback} from "react-native";
 import React from "react";
+
 const { UIManager } = NativeModules;
 
 UIManager.setLayoutAnimationEnabledExperimental &&

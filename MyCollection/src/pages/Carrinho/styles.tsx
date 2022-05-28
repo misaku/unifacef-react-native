@@ -1,6 +1,7 @@
-import styled,{css} from "styled-components/native";
+import styled, {css} from "styled-components/native";
 import {FontAwesome} from '@expo/vector-icons';
 import color from "color";
+
 export const Container = styled.View`
   padding: 20px;
   justify-content: center;

@@ -1,8 +1,9 @@
-import {Container, Title, TitleBold} from './styles';
-import { Input } from '../../components/Input';
+import {Container} from './styles';
+import {Input} from '../../components/Input';
 import {DefaultButton} from "../../components/DefaultButton";
-import {useState} from "react";
+import React, {useState} from "react";
 import {Header} from "../../components/Header";
+
 export const Perfil:React.FC=()=>{
     const [load,setload] =useState<boolean>(false)
 

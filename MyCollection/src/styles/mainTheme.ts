@@ -1,5 +1,5 @@
-import { DefaultTheme } from 'styled-components';
-import { BACKGROUND_COLOR, PRIMARY, SECUNDARY, DANGER } from './colors';
+import {DefaultTheme} from 'styled-components';
+import {BACKGROUND_COLOR, DANGER, PRIMARY, SECUNDARY} from './colors';
 
 const mainTheme: DefaultTheme = {
     measures:{
