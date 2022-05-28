@@ -6,6 +6,7 @@ export const Button = styled.TouchableOpacity`
   padding: 10px 20px;
   border-radius: ${props=> props.theme.measures.radius}px;
   margin: 5px 0px;
+  min-height: 46px;
   align-items: center;
   justify-content: center;
   align-self: stretch;

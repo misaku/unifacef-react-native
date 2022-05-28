@@ -14,7 +14,7 @@ export default function App() {
     <ThemeProvider theme={mainTheme}>
       <Background>
         <StatusBar style="light" translucent={false} backgroundColor={color(BACKGROUND_COLOR).darken(0.5).hex()}/>
-        <Perfil />
+        <Cadastro />
       </Background>
     </ThemeProvider>
   );

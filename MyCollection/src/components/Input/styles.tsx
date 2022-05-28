@@ -18,6 +18,7 @@ export const InputContainer = styled.View`
   background-color: ${props=>color(props.theme.colors.background).darken(0.25).hex()};
   padding: 10px 20px;
   margin: 5px 0;
+  min-height: 46px;
   border-radius: ${props=> props.theme.measures.radius}px;
   flex-direction: row;
 
