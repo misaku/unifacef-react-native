@@ -1,6 +1,7 @@
-import styled,{css} from "styled-components/native";
+import styled, {css} from "styled-components/native";
 import {FontAwesome} from '@expo/vector-icons';
 import color from "color";
+
 export const Container = styled.View`
   flex: 1;
   padding: 20px;

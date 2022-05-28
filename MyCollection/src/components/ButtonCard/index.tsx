@@ -19,7 +19,7 @@ interface ItensProps {
 }
 interface ButtonCardProps {
     item: ItensProps;
-    addCart: (id:number)=>void;
+    addCart: (item:ItensProps)=>void;
     goDetail: (id:number)=>void;
     setActive: (id?:number)=>void;
     activeId?: number;
@@ -42,8 +42,8 @@ export const ButtonCard: React.FC<ButtonCardProps> = ({item, goDetail, addCart, 
                             <ContainerCard>
                                 <ItemTitle ellipsizeMode={'clip'} numberOfLines={2}>{item.name}</ItemTitle>
                                 <ItemTitleBold>R$ {item.value.toFixed(2).toString().replace('.', ',')}</ItemTitleBold>
-                                <DefaultButton title={'DETALHES'}  onPress={goDetail as any}/>
-                                <DefaultButton title={'ADD CART'}  onPress={addCart as any}/>
+                                <DefaultButton title={'DETALHES'}  onPress={()=>goDetail(item.id)}/>
+                                <DefaultButton title={'ADD CART'}  onPress={()=>goDetail(item as any)}/>
                             </ContainerCard>
                         </TouchableWithoutFeedback>
                     )}

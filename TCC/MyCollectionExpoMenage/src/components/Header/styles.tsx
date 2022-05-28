@@ -1,8 +1,15 @@
 import styled from "styled-components/native";
 import color from "color";
 import {StyleSheet} from 'react-native';
+import {getStatusBarHeight} from 'react-native-status-bar-height';
 
-export const BKG = styled.SafeAreaView`
+export const BKGSafe = styled.View`
+  background-color: ${props => color(props.theme.colors.background).darken(0.5).hex()};
+  width: 100%;
+  min-height: ${60+getStatusBarHeight(true)}px;
+  justify-content: flex-end;
+`
+export const BKG = styled.View`
   background-color: ${props => color(props.theme.colors.background).darken(0.3).hex()};
   justify-content: center;
   width: 100%;

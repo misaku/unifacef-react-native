@@ -1,88 +1,73 @@
-import {Box, Container, Title, Text, Image} from './styles';
+import {Box, Container, Image, Text, Title} from './styles';
 import {DefaultButton} from "../../components/DefaultButton";
-import {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Header} from "../../components/Header";
 import {ScrollView} from "react-native";
 import {Background} from "../../components/Background";
+import {api} from "../../api";
+import {ToastLayout} from "../../components/ToastLayout";
+import {useToast} from "native-base";
+import {useRoute} from "@react-navigation/native";
+import {DetalhesScreenRouteProp} from "../../Routes/PrivateNavigation";
+
+interface ItensProps {
+    id: number;
+    img: string;
+    name: string;
+    description: string;
+    value: number;
+    type: string;
+}
 
 export const Detalhes: React.FC = () => {
-    const [load, setload] = useState<boolean>(false)
+    const [data, setData] = useState<ItensProps|undefined>()
+    const toast = useToast()
+    const route = useRoute<DetalhesScreenRouteProp>();
+
 
     const change = async () => {
-        setload(true);
         await (new Promise(resolve => setTimeout(resolve, 2000)))
-        setload(false)
     }
+
+    const getData = async ()=>{
+        try{
+            const response = await api.get<ItensProps>(`games/${route.params.id}`)
+            if (!!response.data) setData(response.data)
+        }catch (e) {
+            toast.show({
+                placement: "top-right",
+                render:({id})=>{
+                    return ToastLayout.error({id, description: e.message, close: toast.close})
+                }
+            })
+        }
+
+    }
+    useEffect(()=>{
+        getData()
+    },[])
     return (
         <Background>
-            <Header title={'Nome do Game'}/>
+            <Header title={data?.name}/>
             <ScrollView>
-                <Image
-                    source={{uri: "https://cdn.akamai.steamstatic.com/steam/apps/1372880/header.jpg?t=1641323785"}}
-                />
+                {data?.img&&<Image
+                    source={{uri: data?.img}}
+                />}
                 <Container>
                     <Box>
                         <Title>TIPO</Title>
-                        <Text>Ação</Text>
+                        <Text>{data?.type}</Text>
+                    </Box>
+                    <Box>
+                        <Title>DESCRIÇÃO</Title>
+                        <Text>{data?.description}</Text>
                     </Box>
                     <Box marginBottom={20}>
-                        <Title>DESCRIÇÃO</Title>
-                        <Text>asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                            asdsadas sadsad sadsad asd
-                        </Text>
+                        <Title>VALOR</Title>
+                        <Text>R$ {data?.value.toFixed(2).toString().replace('.', ',')}</Text>
                     </Box>
-                    <DefaultButton title={'ADICIONAR AO CARRINHO'} loading={load} onPress={change}/>
-                    <DefaultButton title={'COMPRAR'} loading={load} onPress={change}/>
+                    <DefaultButton title={'ADICIONAR AO CARRINHO'}  onPress={change}/>
+                    <DefaultButton title={'COMPRAR'}  onPress={change}/>
                 </Container>
             </ScrollView>
         </Background>

@@ -1,4 +1,4 @@
-import { DefaultTheme } from 'styled-components';
+import {DefaultTheme} from 'styled-components';
 import {BACKGROUND_COLOR, DANGER, PRIMARY, SECUNDARY} from './colors';
 
 const mainTheme: DefaultTheme = {

@@ -1,7 +1,4 @@
-import styled, {css} from "styled-components/native";
-import {StyleSheet} from 'react-native'
-import {FontAwesome} from '@expo/vector-icons';
-import color from "color";
+import styled from "styled-components/native";
 
 
 export const ItemTitle = styled.Text`

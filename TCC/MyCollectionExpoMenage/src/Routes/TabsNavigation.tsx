@@ -5,8 +5,9 @@ import {Perfil} from "../pages/Perfil";
 import React from "react";
 import color from "color";
 
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import {MaterialCommunityIcons} from '@expo/vector-icons';
 import {BACKGROUND_COLOR, PRIMARY, SECUNDARY} from "../styles/colors";
+
 const Tab = createMaterialBottomTabNavigator();
 
 export const TabsNavigation: React.FC = () => {

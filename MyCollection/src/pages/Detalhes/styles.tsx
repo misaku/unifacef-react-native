@@ -1,6 +1,5 @@
-import styled from 'styled-components/native'
+import styled from "styled-components/native";
 import color from "color";
-
 
 export const Container = styled.View`
   flex: 1;
@@ -20,10 +19,6 @@ export const Box = styled.View<BoxProps>`
   margin-bottom: ${props=>(props.marginBottom?props.marginBottom:5)}px;
   border-radius: ${props => props.theme.measures.radius};
 `
-export const LastBox = styled(Box)`
-  margin-bottom: 20px
-`
-
 export const Title = styled.Text`
   color: ${props=>props.theme.colors.primary};
   font-size: 16px;

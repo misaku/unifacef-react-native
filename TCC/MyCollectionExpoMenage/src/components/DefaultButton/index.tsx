@@ -1,9 +1,6 @@
 import React from "react";
 import {TouchableOpacityProps} from 'react-native'
-import {
-    Button,
-    ButtonTitle, LoadingIndicator,
-} from "./styles";
+import {Button, ButtonTitle, LoadingIndicator,} from "./styles";
 import {BACKGROUND_COLOR} from "../../styles/colors";
 
 
