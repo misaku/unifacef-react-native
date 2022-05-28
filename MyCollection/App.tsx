@@ -8,13 +8,15 @@ import {BACKGROUND_COLOR} from "./src/styles/colors";
 import {Login} from "./src/pages/Login";
 import {Cadastro} from "./src/pages/Cadastro";
 import {Perfil} from "./src/pages/Perfil";
+import {Detalhes} from "./src/pages/Detalhes";
+import {Carrinho} from "./src/pages/Carrinho";
 
 export default function App() {
   return (
     <ThemeProvider theme={mainTheme}>
       <Background>
         <StatusBar style="light" translucent={false} backgroundColor={color(BACKGROUND_COLOR).darken(0.5).hex()}/>
-        <Cadastro />
+        <Carrinho />
       </Background>
     </ThemeProvider>
   );

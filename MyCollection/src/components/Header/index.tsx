@@ -6,14 +6,15 @@ import {SafeAreaView} from "react-native";
 
 interface HeaderProps{
     title?:string;
+    backFalse?:boolean;
 }
-export const Header: React.FC<HeaderProps> = ({children, title}) => {
+export const Header: React.FC<HeaderProps> = ({children, title, backFalse=false}) => {
     return (
         <BKGSafe>
             <SafeAreaView />
             <BKG>
                 <LeftContainer>
-                    <Ionicons name="chevron-back" size={30} color={PRIMARY} style={styles.back}/>
+                    {!backFalse&&(<Ionicons name="chevron-back" size={30} color={PRIMARY} style={styles.back}/>)}
                 </LeftContainer>
                 <TitleContainer>
                     {!!title?(<Title>{title}</Title>):(children)}
