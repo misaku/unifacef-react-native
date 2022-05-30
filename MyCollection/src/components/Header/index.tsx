@@ -22,7 +22,7 @@ export const Header: React.FC<HeaderProps> = ({children, title, backFalse=false}
     const PLACEHOLDER_COLOR = useMemo(()=>color(theme.colors.background).lighten(0.5).hex(),[theme]);
     const PLACEHOLDER_COLOR_DARKEN = useMemo(()=>color(theme.colors.background).darken(0.25).hex(),[theme]);
 
-    const navigation = useNavigation()
+    const navigation = useNavigation<any>()
     return (
         <BKGSafe>
             <SafeAreaView />

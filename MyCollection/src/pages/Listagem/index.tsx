@@ -10,6 +10,7 @@ import {useNavigation} from "@react-navigation/native";
 import {api} from "../../api";
 import {useToast} from "native-base";
 import {ToastLayout} from "../../components/ToastLayout";
+import {TabNavScreenNavigationProp} from "../../Routes/PrivateNavigation";
 
 
 interface ItensProps {
@@ -43,7 +44,7 @@ export const Listagem: React.FC = () => {
         getData()
     },[])
 
-    const navigation = useNavigation<any>()
+    const navigation = useNavigation<TabNavScreenNavigationProp>()
     return (
         <Background>
             <Header backFalse>

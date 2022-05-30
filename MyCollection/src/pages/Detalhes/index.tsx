@@ -31,7 +31,6 @@ export const Detalhes: React.FC = () => {
 
     const getData = async ()=>{
         try{
-            console.log('???', route.params.id)
             const response = await api.get<ItensProps>(`games/${route.params.id}`)
             if (!!response.data) setData(response.data)
         }catch (e) {

@@ -1,4 +1,4 @@
-import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import {createMaterialBottomTabNavigator, MaterialBottomTabNavigationProp} from '@react-navigation/material-bottom-tabs';
 import {Listagem} from "../pages/Listagem";
 import {Carrinho} from "../pages/Carrinho";
 import {Perfil} from "../pages/Perfil";
@@ -7,6 +7,17 @@ import color from "color";
 
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import {useMyTheme} from "../hooks/Theme.hooks";
+
+export type TabsNavigationParamList = {
+    Home: undefined;
+    Cart: undefined;
+    Perfil: undefined;
+};
+
+export  type HomeScreenTabNavigationProps = MaterialBottomTabNavigationProp<TabsNavigationParamList,'Home'>
+export  type CartScreenTabNavigationProps = MaterialBottomTabNavigationProp<TabsNavigationParamList,'Cart'>
+export  type PerfilScreenTabNavigationProps = MaterialBottomTabNavigationProp<TabsNavigationParamList,'Perfil'>
+
 const Tab = createMaterialBottomTabNavigator();
 
 export const TabsNavigation: React.FC = () => {

@@ -6,6 +6,7 @@ import {api} from "../../api";
 import {useToast} from "native-base";
 import {useNavigation} from "@react-navigation/native";
 import {ToastLayout} from "../../components/ToastLayout";
+import {CadastroScreenNavigationProp} from "../../Routes/OpenNavigation";
 
 type CadastroData = {
     email: string;
@@ -32,7 +33,7 @@ export const CadastroControllerProvider: React.FC = ({children})=>{
         }
     });
 
-    const navigation = useNavigation()
+    const navigation = useNavigation<CadastroScreenNavigationProp>()
     const toast = useToast();
 
     const sendForm = handleSubmit(async (data: CadastroData) => {

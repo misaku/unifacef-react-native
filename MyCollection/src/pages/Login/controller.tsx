@@ -9,6 +9,7 @@ import {ToastLayout} from "../../components/ToastLayout";
 import {useMyTheme} from "../../hooks/Theme.hooks";
 import color from "color";
 import {useAuth} from "../../hooks/Auth.hooks";
+import {LoginScreenNavigationProp} from "../../Routes/OpenNavigation";
 
 type LoginData = {
     email: string;
@@ -39,7 +40,7 @@ export const LoginControllerProvider: React.FC = ({children})=>{
         }
     });
     const {getSaveLogin, login} = useAuth()
-    const navigation = useNavigation()
+    const navigation = useNavigation<LoginScreenNavigationProp>()
     const toast = useToast();
 
 
@@ -60,9 +61,9 @@ export const LoginControllerProvider: React.FC = ({children})=>{
                 const [data] = response.data as any[];
                 if(!!data){
                     const {email, id} = data;
-                    console.log({email, id, saveLogin})
                     await login({email, id}, saveLogin)
                 }else {
+                    setload(false)
                     toast.show({
                         placement: "top-right",
                         render:({id})=>{
@@ -71,6 +72,7 @@ export const LoginControllerProvider: React.FC = ({children})=>{
                     })
                 }
             } catch (e: any){
+                setload(false)
                 toast.show({
                     placement: "top-right",
                     render:({id})=>{
@@ -80,7 +82,6 @@ export const LoginControllerProvider: React.FC = ({children})=>{
                 })
             }
 
-            setload(false)
         }
     ) ;
 
