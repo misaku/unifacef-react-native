@@ -35,6 +35,16 @@
       "email": "joy@teste.com",
       "password": "123456",
       "id": 7
+    },
+    {
+      "email": "mica@teste.com",
+      "password": "123456",
+      "id": 8
+    },
+    {
+      "email": "felipe.ds@outlook.com",
+      "password": "Michel",
+      "id": 9
     }
   ],
   "games": [
