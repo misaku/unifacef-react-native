@@ -3,7 +3,6 @@ import {FontAwesome} from '@expo/vector-icons';
 import color from "color";
 
 export const Container = styled.View`
-  flex: 1;
   padding: 20px;
   justify-content: center;
   align-items: center;
@@ -18,7 +17,7 @@ export const Box = styled.View<BoxProps>`
   align-self: stretch;
   margin: 5px 0;
   margin-bottom: ${props=>(props.marginBottom?props.marginBottom:5)}px;
-  border-radius: ${props => props.theme.measures.radius};
+  border-radius: ${props => props.theme.measures.radius}px;
   flex-direction: row;
 `
 interface TitleProps{

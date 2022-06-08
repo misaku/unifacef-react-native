@@ -13,10 +13,11 @@ export const TitleBold = styled.Text`
 `
 export const Container = styled.View`
   flex: 1;
-  padding: 30px;
+  padding: 20px;
   justify-content: center;
   align-items: center;
 `;
+
 export const Link = styled.Text`
   font-size: 18px;
   color: ${props => props.theme.colors.primary};
@@ -25,6 +26,7 @@ export const Link = styled.Text`
 `
 
 export const Switch = styled.Switch`
+
 `
 export const LabelSwitch = styled.Text`
   color: ${props => props.theme.colors.secondary};

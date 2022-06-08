@@ -1,15 +1,18 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {TabsNavigation} from "./TabsNavigation";
+import {createNativeStackNavigator,NativeStackNavigationProp} from '@react-navigation/native-stack';
+import {TabsNavigation, TabsNavigationParamList} from "./TabsNavigation";
 import {Detalhes} from "../pages/Detalhes";
 import React from "react";
-import {RouteProp} from "@react-navigation/native";
+import {RouteProp, NavigatorScreenParams} from "@react-navigation/native";
 
-type RootStackParamList = {
-    TabNav: undefined;
+
+export type PrivateNavigationParamList = {
+    TabNav: NavigatorScreenParams<TabsNavigationParamList>;
     Detalhes: { id: number };
 };
-export type DetalhesScreenRouteProp = RouteProp<RootStackParamList, 'Detalhes'>;
-const Stack = createNativeStackNavigator<RootStackParamList>();
+export type DetalhesScreenRouteProp = RouteProp<PrivateNavigationParamList, 'Detalhes'>;
+export type DetalhesScreenNavigationProp = NativeStackNavigationProp<PrivateNavigationParamList, 'Detalhes'>;
+export type TabNavScreenNavigationProp = NativeStackNavigationProp<PrivateNavigationParamList, 'TabNav'>;
+const Stack = createNativeStackNavigator<PrivateNavigationParamList>();
 
 export const PrivateNavigation: React.FC = () => {
     return (
