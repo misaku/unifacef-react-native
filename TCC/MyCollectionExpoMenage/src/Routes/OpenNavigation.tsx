@@ -3,7 +3,12 @@ import {Cadastro} from "../pages/Cadastro";
 import {Login} from "../pages/Login";
 import React from "react";
 
-const Stack = createNativeStackNavigator();
+export type OpenNavigationProps={
+    Login: undefined,
+    Cadastro: undefined
+}
+const Stack = createNativeStackNavigator<OpenNavigationProps>();
+
 
 export const OpenNavigation: React.FC = () => {
     return (

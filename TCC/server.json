@@ -1,5 +1,53 @@
 {
-  "games" : [
+  "pedidos": [],
+  "users": [
+    {
+      "email": "michel.kuguio@gmail.com",
+      "password": "123546",
+      "id": 1
+    },
+    {
+      "email": "michel@teste.com",
+      "password": "123456",
+      "id": 2
+    },
+    {
+      "email": "teste@teste1.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "email": "teste@xyz.com",
+      "password": "123456",
+      "id": 4
+    },
+    {
+      "email": "andre@gmal.com",
+      "password": "123456",
+      "id": 5
+    },
+    {
+      "email": "lucaskns1996@gmail.com",
+      "password": "123456",
+      "id": 6
+    },
+    {
+      "email": "joy@teste.com",
+      "password": "123456",
+      "id": 7
+    },
+    {
+      "email": "mica@teste.com",
+      "password": "123456",
+      "id": 8
+    },
+    {
+      "email": "felipe.ds@outlook.com",
+      "password": "Michel",
+      "id": 9
+    }
+  ],
+  "games": [
     {
       "id": 1,
       "img": "https://cdn.akamai.steamstatic.com/steam/apps/349040/header.jpg?t=1611701005",

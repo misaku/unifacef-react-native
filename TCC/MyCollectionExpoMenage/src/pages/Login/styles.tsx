@@ -23,3 +23,18 @@ export const Link = styled.Text`
   align-self: flex-end;
   margin-top: 20px;
 `
+
+export const Switch = styled.Switch`
+`
+export const LabelSwitch = styled.Text`
+  color: ${props => props.theme.colors.secondary};
+  margin-left: 10px;
+`
+export const ContainerSwitch = styled.View`
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-end;
+  padding-left: 20px;
+  margin-top: 10px;
+`
