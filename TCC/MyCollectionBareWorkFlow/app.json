@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "jsEngine": "hermes",
+    "name": "MyCollectionBareWorkFlow",
+    "slug": "MyCollectionBareWorkFlow",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+  }
+}
