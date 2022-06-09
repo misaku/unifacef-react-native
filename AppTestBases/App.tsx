@@ -4,20 +4,30 @@ import {EstadoLocal} from "./src/pages/EstadoLocal";
 import {useState} from "react";
 import {CicloDeVida} from "./src/pages/CicloDeVida";
 import {ToDoList} from "./src/pages/ToDoList";
+import {EstadoGlonbal} from "./src/pages/EstadoGlonbal";
+import {TesteContextApiProvider} from "./src/pages/EstadoGlonbal/hooks/ContexApi";
+import ProviderContexZustend from "./src/pages/EstadoGlonbal/hooks/ContextZuztandStore";
 
 export default function App() {
     const [mount, setMount] = useState<boolean>(false)
     const invertMount = () => setMount(current => !current)
     return (
-        <View style={styles.container}>
-            <Text>Open up App.tsx to start working on your app!</Text>
-            <StatusBar style="light" backgroundColor={'#f00'}/>
-            <EstadoLocal/>
-            <Text>Montar Pagina Ciclo de Vida</Text>
-            <Switch value={mount} onChange={invertMount}/>
-            {mount && (<CicloDeVida/>)}
-            <ToDoList titulo={'teste'}/>
-        </View>
+        <ProviderContexZustend initialNumber={5}>
+            <TesteContextApiProvider>
+                <View style={styles.container}>
+                    {/*<Text>Open up App.tsx to start working on your app!</Text>*/}
+                    {/*<StatusBar style="light" backgroundColor={'#f00'}/>*/}
+                    {/*<EstadoLocal/>*/}
+                    {/*<Text>Montar Pagina Ciclo de Vida</Text>*/}
+                    {/*<Switch value={mount} onChange={invertMount}/>*/}
+                    {/*{mount && (<CicloDeVida/>)}*/}
+                    {/*<ToDoList titulo={'teste'}/>*/}
+                    <EstadoGlonbal />
+                </View>
+            </TesteContextApiProvider>
+        </ProviderContexZustend>
+
+
     );
 }
 

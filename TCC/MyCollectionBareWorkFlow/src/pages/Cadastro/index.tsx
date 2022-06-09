@@ -1,47 +1,25 @@
-import {Button, Container, ContainerInput, Input} from "./styles";
-import {DARKBACKGROUND} from "../../styles/colors";
-import color from "color";
-import {FontAwesome5} from '@expo/vector-icons';
+import {Container, Title, TitleBold} from './styles';
+import { Input } from '../../components/Input';
+import {DefaultButton} from "../../components/DefaultButton";
 import {useState} from "react";
 import {Header} from "../../components/Header";
+export const Cadastro:React.FC=()=>{
+    const [load,setload] =useState<boolean>(false)
 
-const PLACEHOLDER_COLOR = color(DARKBACKGROUND).lighten(0.5).hex();
-const PLACEHOLDER_COLOR_DARKEN = color(DARKBACKGROUND).darken(0.25).hex();
-export const Cadastro: React.FC = () => {
-    const [securety, setSecurety] = useState<boolean>(true)
-    const [securetyConfirm, setSecuretyConfirm] = useState<boolean>(true)
-    const [loading, setLoading] = useState<boolean>(false)
-
-    const changeSecure = () => setSecurety(current => !current)
-    const changeConfirm = () => setSecuretyConfirm(current => !current)
-
-    const sendForm = async ()=>{
-        setLoading(true);
-        await new Promise(resolve => setTimeout(resolve,3000));
-        setLoading(false);
+    const change= async ()=>{
+        setload(true);
+        await (new Promise(resolve => setTimeout(resolve,2000)))
+        setload(false)
     }
-    return (
-        <>
-            <Header title={'Cadastro'}/>
-            <Container>
-                <ContainerInput>
-                    <Input keyboardType={'email-address'} placeholder={'E-MAIL'} placeholderTextColor={PLACEHOLDER_COLOR}/>
-                </ContainerInput>
-                <ContainerInput>
-                    <Input keyboardType={'default'} placeholder={'SENHA'} secureTextEntry={securety}
-                           placeholderTextColor={PLACEHOLDER_COLOR} hasIconRight/>
-                    <FontAwesome5 name={`eye${securety ? '' : '-slash'}`} size={26} color={PLACEHOLDER_COLOR}
-                                  onPress={changeSecure}/>
-                </ContainerInput>
-                <ContainerInput>
-                    <Input keyboardType={'default'} placeholder={'CONFIRME A SENHA'} secureTextEntry={securetyConfirm}
-                           placeholderTextColor={PLACEHOLDER_COLOR} hasIconRight/>
-                    <FontAwesome5 name={`eye${securetyConfirm ? '' : '-slash'}`} size={26} color={PLACEHOLDER_COLOR}
-                                  onPress={changeConfirm}/>
-                </ContainerInput>
-                <Button title={'CADASTRAR'} loading={loading} onPress={sendForm}/>
-            </Container>
-        </>
+    return(<>
+        <Header title={'Cadastro'} />
+        <Container>
 
-    )
+            <Input placeholder='E-MAIL' keyboardType={'email-address'}/>
+            <Input placeholder='SENHA' secureTextEntry />
+            <Input placeholder='CONFIRMACAO DE SENHA' secureTextEntry />
+            <DefaultButton title={'CADASTRAR'}  loading={load} onPress={change}/>
+        </Container>
+        </>
+        )
 }
