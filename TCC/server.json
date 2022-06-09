@@ -33,6 +33,18 @@
         }
       ],
       "id": 2
+    },
+    {
+      "userId": 1,
+      "userEmail": "michel.kuguio@gmail.com",
+      "items": [
+        {
+          "jogoId": 3,
+          "titulo": "Cuphead",
+          "valor": 89.14
+        }
+      ],
+      "id": 3
     }
   ],
   "users": [
