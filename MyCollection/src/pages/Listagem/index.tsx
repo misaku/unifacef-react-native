@@ -1,6 +1,6 @@
-import style, {Container, Title, TitleBold} from './styles';
+import style, {Container, Title, TitleBold, Box} from './styles';
 
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {Header} from "../../components/Header";
 
 import {ButtonCard} from "../../components/ButtonCard";
@@ -14,7 +14,10 @@ import {TabNavScreenNavigationProp} from "../../Routes/PrivateNavigation";
 import {useCarrinhoStore} from '../../store/Carrinho';
 import {useMyTheme} from '../../hooks/Theme.hooks';
 import {BUTTON_CARD_HEIGHT} from '../../components/ButtonCard/styles';
-
+import {useHistoricoStore} from '../../store/Historico';
+import {useAuth} from '../../hooks/Auth.hooks';
+import {Input} from '../../components/Input';
+import {FontAwesome5, FontAwesome} from '@expo/vector-icons';
 
 interface ItensProps {
     id: number;
@@ -27,7 +30,10 @@ interface ItensProps {
 
 export const Listagem: React.FC = () => {
     const [active, setActive] = useState<number>()
+    const [pesquisaAtiva, setPesquisaAtiva] = useState<boolean>(false)
+
     const [page, setPage] = useState<number>(1)
+    const [buscar, setBuscar] = useState<string>('')
     const [refreshing, setRefreshing] = useState<boolean>(false)
     const [list, setList] = useState<ItensProps[]>([])
     const [last, setLast] = useState<boolean>(false)
@@ -76,12 +82,13 @@ export const Listagem: React.FC = () => {
         await getData(1);
         setRefreshing(false);
     }
-    useEffect(()=>{
-        getData(1)
-    },[])
+
 
     const navigation = useNavigation<TabNavScreenNavigationProp>()
     const addItem = useCarrinhoStore(state=> state.addItem)
+    const loadData = useHistoricoStore(state => state.loadData)
+    const {user} = useAuth()
+
     const addCart = useCallback((item:ItensProps)=>() => {
         addItem({
             jogoId: item.id,
@@ -89,6 +96,13 @@ export const Listagem: React.FC = () => {
             valor: item.value
         })
     },[addItem])
+
+    useEffect(()=>{
+        if (user){
+            getData(1)
+            loadData(user.id, user.email)
+        }
+    },[])
 
     const renderItem = useCallback( ({item}) => (
       <ButtonCard
@@ -101,9 +115,36 @@ export const Listagem: React.FC = () => {
         }}/>
     ),[active, addCart,setActive])
 
+    const filter = useMemo(()=>!!buscar?list.filter(item=>item.name.toUpperCase().includes(buscar.toUpperCase())):list,[list,buscar])
     return (
         <Background>
-            <Header backFalse>
+            <Header
+              letf={() => (
+                <FontAwesome5 name={`search`} size={26} color={theme.colors.primary} onPress={() => setPesquisaAtiva(true)}/>
+              )}
+              extra={() => (
+                <>
+                    {pesquisaAtiva && (<Box>
+                        <Input placeholder='BUSCAR'
+                               onChangeText={setBuscar}
+                               value={buscar}
+                               color={'#FFFFFF'}
+                               right={() => (
+                                 <FontAwesome name={`close`}
+                                              size={26}
+                                              color={theme.colors.danger}
+                                              style={{marginRight: -5, marginLeft: 10}}
+                                              onPress={() => {
+                                                  setPesquisaAtiva(false)
+                                                  setBuscar('')
+                                              }}/>)}
+                               left={() => <FontAwesome5 name={`search`} size={26} color={theme.colors.primary}
+                                                         style={{marginRight: 10, marginLeft: -5}}/>}
+                        />
+                    </Box>)}
+                </>
+              )}
+              backFalse>
                 <Title><TitleBold>My</TitleBold>Collection</Title>
             </Header>
             <Container>
@@ -127,7 +168,7 @@ export const Listagem: React.FC = () => {
                       {length: BUTTON_CARD_HEIGHT, offset: BUTTON_CARD_HEIGHT * index, index}
                     )}
                     numColumns={2}
-                    data={list}
+                    data={filter}
                 />
             </Container>
         </Background>

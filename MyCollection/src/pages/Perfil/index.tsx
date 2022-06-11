@@ -14,12 +14,13 @@ import {perfilValidator} from "./perfil.validator";
 import {api} from "../../api";
 import {ToastLayout} from "../../components/ToastLayout";
 import {useMyTheme} from "../../hooks/Theme.hooks";
+import {TabNavScreenNavigationProp} from '../../Routes/PrivateNavigation';
 
 export const Perfil: React.FC = () => {
     const [load, setload] = useState<boolean>(false)
     const {theme} = useMyTheme()
     const toast = useToast();
-    const navigation = useNavigation()
+    const navigation = useNavigation<TabNavScreenNavigationProp>()
     const { user, logout} = useAuth()
 
     const {control, handleSubmit, formState: {errors}} = useForm({
@@ -149,6 +150,7 @@ export const Perfil: React.FC = () => {
 
 
                 <DefaultButton title={'EDITAR'} loading={load} onPress={handleSubmit(onSubmit)}/>
+                <DefaultButton title={'HISTORICO DE COMPRAS'} onPress={()=>navigation.navigate('Historico')}/>
 
                 <DefaultButton style={{backgroundColor: theme.colors.secondary}} title={'LOGOUT'} loading={load} onPress={logout}/>
             </Container>

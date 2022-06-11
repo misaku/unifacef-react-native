@@ -99,6 +99,7 @@ export const Listagem: React.FC = () => {
   const navigation = useNavigation<TabNavScreenNavigationProp>()
   const addItem = useCarrinhoStore(state => state.addItem)
 
+
   const addCart = useCallback((item: ItensProps) => {
     addItem({
       jogoId: item.id,

@@ -1,6 +1,6 @@
 import {Box, Container, Image, Text, Title} from './styles';
 import {DefaultButton} from '../../components/DefaultButton';
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {Header} from '../../components/Header';
 import {ScrollView} from 'react-native';
 import {Background} from '../../components/Background';
@@ -11,6 +11,7 @@ import {useNavigation, useRoute} from '@react-navigation/native';
 import {DetalhesScreenRouteProp, TabNavScreenNavigationProp} from '../../Routes/PrivateNavigation';
 import {useCarrinhoStore} from '../../store/Carrinho';
 import {HomeScreenTabNavigationProps} from '../../Routes/TabsNavigation';
+import {useHistoricoStore} from '../../store/Historico';
 
 interface ItensProps {
   id: number;
@@ -28,6 +29,8 @@ export const Detalhes: React.FC = () => {
   const navigation = useNavigation<TabNavScreenNavigationProp & HomeScreenTabNavigationProps>()
 
   const addItem = useCarrinhoStore(state => state.addItem)
+  const historico = useHistoricoStore(store=>store.historico)
+  const isMyne = useMemo(()=>data?historico.map(it=>it.jogoId).includes(data.id):false,[data])
     const addCart = () => {
         if (data) {
             addItem({
@@ -84,7 +87,7 @@ export const Detalhes: React.FC = () => {
             <Title>VALOR</Title>
             <Text>R$ {data?.value.toFixed(2).toString().replace('.', ',')}</Text>
           </Box>
-          {data && (
+          {data && !isMyne && (
             <>
               <DefaultButton title={'ADICIONAR AO CARRINHO'} onPress={addCart}/>
               <DefaultButton title={'COMPRAR'} onPress={addAndGoToCart}/>

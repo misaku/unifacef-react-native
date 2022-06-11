@@ -25,8 +25,6 @@ l
 <TCC/MyCollectionExpoMenage/src/pages/Cadastro/controller.tsx,f\3\f349c821a9a849c95c8f9e6d768ddc403987968e
 h
 8TCC/MyCollectionExpoMenage/src/Routes/TabsNavigation.tsx,e\a\ea56d8e7af3dee7ceba6c6918cce567430b7646b
-?
-TCC/server.json,4\f\4fcb919c4debcc350d907a32ec1797208b0809e7
 f
 6TCC/MyCollectionExpoMenage/src/store/Carrinho.store.ts,f\b\fba6c50887f1edd5c70de9c2e9a5f80594c7cffa
 K
@@ -50,12 +48,6 @@ R
 U
 %optimizeApp/pages/FlatListOptmize.tsx,9\4\94ec787c490e34a650097486e61f6b76883da383
 g
-7TCC/MyCollectionExpoMenage/src/store/Historico.store.ts,b\c\bc19c25071a6911d3d799b5be46a6d3979534955
-o
-?TCC/MyCollectionExpoMenage/src/components/ButtonCard/styles.tsx,d\e\deed24bc6edc4d3f5957298d427e978d7144522b
-g
 7TCC/MyCollectionExpoMenage/src/pages/Detalhes/index.tsx,f\d\fdaec896bd97595f44282781c2ef3ca8898c5d8a
-g
-7TCC/MyCollectionExpoMenage/src/pages/Carrinho/index.tsx,6\2\62d319db8184bd84537753d94af6368fb221ccf1
 e
 5TCC/MyCollectionExpoMenage/src/pages/Perfil/index.tsx,d\8\d883d55fc1a205eec4ae8473b80ec42a4d555ba8

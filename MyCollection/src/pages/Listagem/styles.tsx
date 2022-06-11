@@ -5,6 +5,14 @@ export const Container = styled.View`
   flex: 1;
   padding: 20px;
 `;
+
+export const Box = styled.View`
+  position: absolute;
+  margin: 0 5px;
+  right: 0;
+  left: 0;
+    z-index: 10;
+`;
 export const Title = styled.Text`
   font-size: 20px;
   line-height: 20px;
