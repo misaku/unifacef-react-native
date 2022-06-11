@@ -1,7 +1,7 @@
 import {Container, ContainerButton, ContainerCard, ImageCard, ItemTitle, ItemTitleBold} from './styles';
 import {DefaultButton} from "../DefaultButton";
 import {LayoutAnimation, NativeModules, TouchableWithoutFeedback} from "react-native";
-import React from "react";
+import React, {memo} from "react";
 
 const { UIManager } = NativeModules;
 
@@ -25,30 +25,31 @@ interface ButtonCardProps {
     activeId?: number;
 }
 
-export const ButtonCard: React.FC<ButtonCardProps> = ({item, goDetail, addCart, activeId, setActive}) => {
-    const changeActive = ()=>{
-        LayoutAnimation.linear()
-        if(activeId===item.id)
-            setActive()
-        else setActive(item.id)
-    }
+export const ButtonCard: React.FC<ButtonCardProps> =memo<ButtonCardProps>(({item, goDetail, addCart, activeId, setActive}) => {
+      const changeActive = ()=>{
+          LayoutAnimation.linear()
+          if(activeId===item.id)
+              setActive()
+          else setActive(item.id)
+      }
 
-    return (
+      return (
         <Container>
             <ContainerButton onPress={changeActive}>
                 <ImageCard source={{uri: item.img}} >
                     {activeId===item.id&&(
-                        <TouchableWithoutFeedback onPress={changeActive}>
-                            <ContainerCard>
-                                <ItemTitle ellipsizeMode={'clip'} numberOfLines={2}>{item.name}</ItemTitle>
-                                <ItemTitleBold>R$ {item.value.toFixed(2).toString().replace('.', ',')}</ItemTitleBold>
-                                <DefaultButton title={'DETALHES'}  onPress={()=>goDetail(item.id)}/>
-                                <DefaultButton title={'ADD CART'}  onPress={()=>addCart(item as any)}/>
-                            </ContainerCard>
-                        </TouchableWithoutFeedback>
+                      <TouchableWithoutFeedback onPress={changeActive}>
+                          <ContainerCard>
+                              <ItemTitle ellipsizeMode={'clip'} numberOfLines={2}>{item.name}</ItemTitle>
+                              <ItemTitleBold>R$ {item.value.toFixed(2).toString().replace('.', ',')}</ItemTitleBold>
+                              <DefaultButton title={'DETALHES'}  onPress={()=>goDetail(item.id)}/>
+                              <DefaultButton title={'ADD CART'}  onPress={()=>addCart(item as any)}/>
+                          </ContainerCard>
+                      </TouchableWithoutFeedback>
                     )}
                 </ImageCard>
             </ContainerButton>
         </Container>
-    )
-}
+      )
+  }
+)

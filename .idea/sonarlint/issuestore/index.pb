@@ -23,10 +23,6 @@ o
 ?TCC/MyCollectionExpoMenage/src/components/ButtonCard/styles.tsx,d\e\deed24bc6edc4d3f5957298d427e978d7144522b
 K
 optimizeApp/babel.config.js,e\2\e256e52789dd8a21bd201d050f863e2f2cdde315
-C
-optimizeApp/App.tsx,b\5\b57ab50b38429ed19147626b2d9870296384ac87
-F
-optimizeApp/Drawer.tsx,1\1\1150fe0973962969b67fd77c174982ae3bdbdd88
 H
 optimizeApp/package.json,9\9\99eb1ca024aff5cbf542887ce1254a598dd5090a
 T
