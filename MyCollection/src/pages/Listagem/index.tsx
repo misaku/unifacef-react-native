@@ -13,6 +13,7 @@ import {ToastLayout} from "../../components/ToastLayout";
 import {TabNavScreenNavigationProp} from "../../Routes/PrivateNavigation";
 import {useCarrinhoStore} from '../../store/Carrinho';
 import {useMyTheme} from '../../hooks/Theme.hooks';
+import {BUTTON_CARD_HEIGHT} from '../../components/ButtonCard/styles';
 
 
 interface ItensProps {
@@ -122,6 +123,9 @@ export const Listagem: React.FC = () => {
                         }
                         return null;
                     }}
+                    getItemLayout={(data, index) => (
+                      {length: BUTTON_CARD_HEIGHT, offset: BUTTON_CARD_HEIGHT * index, index}
+                    )}
                     numColumns={2}
                     data={list}
                 />
