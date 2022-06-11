@@ -23,6 +23,7 @@ export default function ValueNotOptmize() {
 
   return (
     <View style={styles.container}>
+      <Text>{Date.now()}</Text>
       <Text>Valor 1</Text>
       <TextInput
         style={{width: '60%', height: 40, backgroundColor: '#f4f4f4'}}

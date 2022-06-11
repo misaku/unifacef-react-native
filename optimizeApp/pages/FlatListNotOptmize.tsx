@@ -31,7 +31,7 @@ export default function FlatListNotOptmize() {
   return (
     <View style={styles.container}>
       <Button title={'add + 1'} onPress={addMore}/>
-      <FlatList data={data} keyExtractor={(item) => `it-${item}`}
+      <FlatList data={data} keyExtractor={(item, idx) => `it-${item}-${idx}`}
                 renderItem={render}/>
     </View>
   );

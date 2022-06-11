@@ -36,6 +36,7 @@ export const Listagem: React.FC = () => {
     const {theme} = useMyTheme()
     const toast = useToast()
 
+
     const getData = async (pageNumber=1)=>{
         setPage(pageNumber + 1);
         //await new Promise(success=>setTimeout(success,1000))

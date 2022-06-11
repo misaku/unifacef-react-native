@@ -1,6 +1,6 @@
 import style, {Container, Title, TitleBold} from './styles';
 
-import React, {useEffect, useState} from "react";
+import React, {useCallback, useEffect, useState} from 'react';
 import {Header} from "../../components/Header";
 
 import {ButtonCard} from "../../components/ButtonCard";
@@ -11,6 +11,7 @@ import {api} from "../../api";
 import {useToast} from "native-base";
 import {ToastLayout} from "../../components/ToastLayout";
 import {TabNavScreenNavigationProp} from "../../Routes/PrivateNavigation";
+import {useCarrinhoStore} from '../../store/Carrinho';
 
 
 interface ItensProps {
@@ -45,6 +46,14 @@ export const Listagem: React.FC = () => {
     },[])
 
     const navigation = useNavigation<TabNavScreenNavigationProp>()
+    const addItem = useCarrinhoStore(state=> state.addItem)
+    const addCart = useCallback((item:ItensProps)=>() => {
+        addItem({
+            jogoId: item.id,
+            titulo: item.name,
+            valor: item.value
+        })
+    },[])
     return (
         <Background>
             <Header backFalse>
@@ -57,8 +66,7 @@ export const Listagem: React.FC = () => {
                             item={item}
                             activeId={active}
                             setActive={setActive}
-                            addCart={() => {
-                            }}
+                            addCart={addCart(item)}
                             goDetail={(id) => {
                                navigation.navigate('Detalhes', {id})
                         }}/>

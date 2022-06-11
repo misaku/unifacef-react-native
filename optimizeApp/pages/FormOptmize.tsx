@@ -5,8 +5,6 @@ import 'react-native-gesture-handler';
 import { useForm, Controller } from "react-hook-form";
 
 export default function FormOptmize() {
-  const [valor, setValor] = useState(0)
-  const [valor2, setValor2] = useState(0)
   const { control, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       valor: '',
