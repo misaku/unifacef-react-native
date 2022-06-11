@@ -13,8 +13,6 @@ S
 #TCC/MyCollectionExpoMenage/app.json,c\3\c38e89fbdd1f51bc7dfad16f8baa30cf8cc621b9
 [
 +TCC/MyCollectionExpoMenage/src/api/index.ts,5\f\5f180b9331b89829dda47c89fa00ccc0539b3239
-e
-5TCC/MyCollectionExpoMenage/src/pages/Perfil/index.tsx,d\8\d883d55fc1a205eec4ae8473b80ec42a4d555ba8
 s
 CTCC/MyCollectionExpoMenage/src/pages/Cadastro/cadastro.validator.ts,b\a\ba74048a54ebb7969e026704b23482332741c5cf
 l
