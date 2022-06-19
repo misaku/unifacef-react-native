@@ -11,7 +11,7 @@ DAVID STEFANI PRADO | [Ver Linkedin](https://www.linkedin.com/in/david-stefani-p
 HYAN KELWIN SOUZA CAMPOS | [Ver Linkedin](https://www.linkedin.com/in/hyan-kelwin-899837157/) | [Ver Trabalho](https://github.com/)
 JOYCE RIBEIRO | [Ver Linkedin](https://www.linkedin.com/in/joyce-ribeiro-07051616b/) | [Ver Trabalho](https://github.com/)
 JOÃO MARCOS RODRIGUES STEFANI | [Ver Linkedin](https://www.linkedin.com/in/jo%C3%A3o-marcos-stefani-168169107/) | [Ver Trabalho](https://github.com/)
-LEONARDO CARLONI RODRIGUES MEIRA | [Ver Linkedin](https://www.linkedin.com/in/leonardo-carloni-94864b230/) | [Ver Trabalho](https://github.com/)
+LEONARDO CARLONI RODRIGUES MEIRA | [Ver Linkedin](https://www.linkedin.com/in/leonardo-carloni-94864b230/) | [Ver Trabalho](https://github.com/LeoCarloni/unifacef-react-native)
 LEONARDO DE CARVALHO NEVES | [Ver Linkedin](https://www.linkedin.com/in/leonardo-cneves/) | [Ver Trabalho](https://github.com/)
 LUCAS FERREIRA GALVÃO | [Ver Linkedin](https://www.linkedin.com/in/lucas-ferreira-galv%C3%A3o-91208b121/) | [Ver Trabalho](https://github.com/)
 LUCAS LAURO COSTA | [Ver Linkedin](https://www.linkedin.com/in/lucas-lauro-b23baa170/) | [Ver Trabalho](https://github.com/)
