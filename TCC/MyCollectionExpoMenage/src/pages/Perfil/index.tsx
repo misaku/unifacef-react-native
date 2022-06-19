@@ -5,7 +5,7 @@ import React, {useState} from "react";
 import {Header} from "../../components/Header";
 import {Background} from "../../components/Background";
 import {useAuth} from "../../hooks/Auth.hooks";
-import {SECUNDARY} from "../../styles/colors";
+
 import {useToast} from "native-base";
 import {useNavigation} from "@react-navigation/native";
 import {Controller, useForm} from "react-hook-form";
@@ -13,10 +13,11 @@ import {yupResolver} from "@hookform/resolvers/yup/dist/yup";
 import {perfilValidator} from "./perfil.validator";
 import {api} from "../../api";
 import {ToastLayout} from "../../components/ToastLayout";
+import {useMyTheme} from "../../hooks/Theme.hooks";
 
 export const Perfil: React.FC = () => {
     const [load, setload] = useState<boolean>(false)
-
+    const {theme} = useMyTheme()
     const toast = useToast();
     const navigation = useNavigation()
     const { user, logout} = useAuth()
@@ -149,7 +150,7 @@ export const Perfil: React.FC = () => {
 
                 <DefaultButton title={'EDITAR'} loading={load} onPress={handleSubmit(onSubmit)}/>
 
-                <DefaultButton style={{backgroundColor: SECUNDARY}} title={'LOGOUT'} loading={load} onPress={logout}/>
+                <DefaultButton style={{backgroundColor: theme.colors.secondary}} title={'LOGOUT'} loading={load} onPress={logout}/>
             </Container>
         </Background>
     )

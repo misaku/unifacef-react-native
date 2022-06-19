@@ -1,5 +1,40 @@
 {
-  "pedidos": [],
+  "pedidos": [
+    {
+      "userId": 1,
+      "userEmail": "michel.kuguio@gmail.com",
+      "items": [
+        {
+          "jogoId": 2,
+          "titulo": "DRAGON BALL Z: KAKAROT",
+          "valor": 81.68
+        },
+        {
+          "jogoId": 4,
+          "titulo": "Crash Bandicoot™ N. Sane Trilogy",
+          "valor": 10.27
+        },
+        {
+          "jogoId": 16,
+          "titulo": "Hollow Knight: Silksong",
+          "valor": 62.85
+        }
+      ],
+      "id": 1
+    },
+    {
+      "userId": 1,
+      "userEmail": "michel.kuguio@gmail.com",
+      "items": [
+        {
+          "jogoId": 4,
+          "titulo": "Crash Bandicoot™ N. Sane Trilogy",
+          "valor": 10.27
+        }
+      ],
+      "id": 2
+    }
+  ],
   "users": [
     {
       "email": "michel.kuguio@gmail.com",

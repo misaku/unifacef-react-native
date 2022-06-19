@@ -3,9 +3,9 @@ import styled from "styled-components/native";
 export const Button = styled.TouchableOpacity`
   background-color: ${props => props.theme.colors.primary};
   padding: 10px 20px;
-  min-height: 45px;
   border-radius: ${props=> props.theme.measures.radius}px;
   margin: 5px 0px;
+  min-height: 46px;
   align-items: center;
   justify-content: center;
   align-self: stretch;

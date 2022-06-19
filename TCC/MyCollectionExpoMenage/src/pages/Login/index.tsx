@@ -1,82 +1,34 @@
 import {Container, ContainerSwitch, LabelSwitch, Link, Switch, Title, TitleBold} from './styles';
 import {Input} from '../../components/Input';
 import {DefaultButton} from "../../components/DefaultButton";
-import React, {useEffect, useState} from "react";
+import React, {useMemo, useState} from "react";
+import color from "color";
+import {useMyTheme} from "../../hooks/Theme.hooks";
 import {Background} from "../../components/Background";
 import {useNavigation} from "@react-navigation/native";
-import color from "color";
-import {BACKGROUND_COLOR, PRIMARY, SECUNDARY} from "../../styles/colors";
-import {Controller, useForm} from "react-hook-form";
-import {yupResolver} from "@hookform/resolvers/yup";
-import {loginValidator} from "./login.validator";
-import {api} from "../../api";
-import {ToastLayout} from "../../components/ToastLayout";
-import {useToast} from "native-base";
-import {useAuth} from "../../hooks/Auth.hooks";
+import {CadastroControllerProvider} from "../Cadastro/controller";
+import {CadastroLayout} from "../Cadastro";
+import {LoginControllerProvider, useLoginController} from "./controller";
+import { Controller } from "react-hook-form";
+
+const LoginLayout:React.FC=()=>{
+
+    const {
+        control,
+        errors,
+        sendForm,
+        load,
+        goToCadastro,
+        saveLogin,
+        changeSaveLogin
+    } = useLoginController()
+
+    const { theme } = useMyTheme();
+    const PLACEHOLDER_COLOR = useMemo(()=>color(theme.colors.background).lighten(0.5).hex(),[theme]);
+    const PLACEHOLDER_COLOR_DARKEN = useMemo(()=>color(theme.colors.background).darken(0.25).hex(),[theme]);
 
 
-const PLACEHOLDER_COLOR = color(BACKGROUND_COLOR).lighten(0.5).hex();
-const PLACEHOLDER_COLOR_DARKEN = color(BACKGROUND_COLOR).darken(0.25).hex();
-
-
-export const Login: React.FC = () => {
-    const [load, setload] = useState<boolean>(false)
-    const [saveLogin, setSaveLogin] = useState<boolean>(false)
-
-    const {getSaveLogin, login} = useAuth()
-    const toast = useToast();
-    const navigation = useNavigation()
-    const {control, handleSubmit, formState: {errors}} = useForm({
-        resolver: yupResolver(loginValidator),
-        defaultValues: {
-            email: '',
-            password: '',
-        }
-    });
-
-    const changeSaveLogin =()=> setSaveLogin(current=>!current)
-
-    const onSubmit = async (dataForm: any) => {
-        setload(true);
-        try{
-            const response =  await api.get('users', {
-                params:{
-                    ...dataForm
-                }
-            })
-
-            const [data] = response.data as any[];
-            if(!!data){
-                const {email, id} = data;
-                await login({email, id}, saveLogin)
-            }else {
-                toast.show({
-                    placement: "top-right",
-                    render:({id})=>{
-                        return ToastLayout.error({id, description: 'e-mail/password inválido(s)', close: toast.close})
-                    }
-                })
-            }
-        } catch (e: any){
-            toast.show({
-                placement: "top-right",
-                render:({id})=>{
-                    return ToastLayout.error({id, description: e.message, close: toast.close})
-                }
-
-            })
-        }
-
-        setload(false)
-    }
-
-    useEffect(()=>{
-        (async()=>{
-            await getSaveLogin();
-        })()
-    },[])
-
-    return (
+    return(
         <Background>
             <Container>
                 <Title><TitleBold>My</TitleBold>Collection</Title>
@@ -111,20 +63,25 @@ export const Login: React.FC = () => {
                     )}
                     name="password"
                 />
-                <DefaultButton title={'ENTRAR'} loading={load} onPress={handleSubmit(onSubmit)}/>
+                <DefaultButton title={'ENTRAR'} loading={load} onPress={sendForm}/>
                 <ContainerSwitch>
                     <Switch
                         onChange={changeSaveLogin}
                         value={saveLogin}
-                        thumbColor={SECUNDARY}
-                        trackColor={{true: PRIMARY, false: PLACEHOLDER_COLOR_DARKEN}}
+                        thumbColor={theme.colors.secondary}
+                        trackColor={{true: theme.colors.primary, false: PLACEHOLDER_COLOR_DARKEN}}
                     />
                     <LabelSwitch>PERMANECER LOGADO</LabelSwitch>
                 </ContainerSwitch>
-                <Link onPress={()=>{
-                    navigation.navigate('Cadastro')
-                }}>cadastrar</Link>
+                <Link onPress={goToCadastro}>cadastrar</Link>
             </Container>
         </Background>
+        )
+}
+export const Login:React.FC = ()=>{
+    return (
+        <LoginControllerProvider>
+            <LoginLayout />
+        </LoginControllerProvider>
     )
 }

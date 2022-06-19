@@ -1,5 +1,16 @@
 import styled from "styled-components/native";
 
+export const BUTTON_CARD_HEIGHT = 195;
+export const Container = styled.View`
+  flex: 1;
+  height: ${BUTTON_CARD_HEIGHT}px;
+  margin: 10px;
+`;
+
+export const ContainerButton = styled.TouchableWithoutFeedback`
+  width: 100%;
+  height: ${BUTTON_CARD_HEIGHT}px;
+`;
 
 export const ItemTitle = styled.Text`
   font-size: 16px;
@@ -15,8 +26,7 @@ export const ItemTitleBold = styled.Text`
 
 export const ImageCard = styled.ImageBackground`
   flex: 1;
-  height: 195px;
-  margin: 10px;
+  height: ${BUTTON_CARD_HEIGHT}px;
   border-radius: ${props=>props.theme.measures.radius}px;
   overflow: hidden;
   border-width: 3px;

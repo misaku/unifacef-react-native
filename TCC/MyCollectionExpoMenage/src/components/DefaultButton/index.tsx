@@ -1,7 +1,7 @@
 import React from "react";
 import {TouchableOpacityProps} from 'react-native'
 import {Button, ButtonTitle, LoadingIndicator,} from "./styles";
-import {BACKGROUND_COLOR} from "../../styles/colors";
+import {useMyTheme} from "../../hooks/Theme.hooks";
 
 
 interface DefaultButton extends TouchableOpacityProps{
@@ -12,9 +12,10 @@ export const DefaultButton: React.FC<DefaultButton> = ({
                                                            title,
                                                            loading=false, ...props
                                                        }) => {
+    const { theme } = useMyTheme()
     return (
         <Button {...props as any}>
-            {loading&&(<LoadingIndicator color={BACKGROUND_COLOR} size={'small'}/>)}
+            {loading&&(<LoadingIndicator color={theme.colors.background} size={'small'}/>)}
             <ButtonTitle>
                 {title}
             </ButtonTitle>

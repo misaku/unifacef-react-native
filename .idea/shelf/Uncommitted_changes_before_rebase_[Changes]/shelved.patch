@@ -1,0 +1,124 @@
+Index: TCC/.idea/modules.xml
+===================================================================
+diff --git a/TCC/.idea/modules.xml b/TCC/.idea/modules.xml
+deleted file mode 100644
+--- a/TCC/.idea/modules.xml	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
++++ /dev/null	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/TCC.iml" filepath="$PROJECT_DIR$/.idea/TCC.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: TCC/.idea/.gitignore
+===================================================================
+diff --git a/TCC/.idea/.gitignore b/TCC/.idea/.gitignore
+deleted file mode 100644
+--- a/TCC/.idea/.gitignore	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
++++ /dev/null	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
+@@ -1,5 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+Index: TCC/.idea/TCC.iml
+===================================================================
+diff --git a/TCC/.idea/TCC.iml b/TCC/.idea/TCC.iml
+deleted file mode 100644
+--- a/TCC/.idea/TCC.iml	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
++++ /dev/null	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="WEB_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/temp" />
+-      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+-      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: TCC/.idea/vcs.xml
+===================================================================
+diff --git a/TCC/.idea/vcs.xml b/TCC/.idea/vcs.xml
+deleted file mode 100644
+--- a/TCC/.idea/vcs.xml	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
++++ /dev/null	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file
+Index: AppTestBases/.idea/AppTestBases.iml
+===================================================================
+diff --git a/AppTestBases/.idea/AppTestBases.iml b/AppTestBases/.idea/AppTestBases.iml
+deleted file mode 100644
+--- a/AppTestBases/.idea/AppTestBases.iml	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
++++ /dev/null	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
+@@ -1,12 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<module type="WEB_MODULE" version="4">
+-  <component name="NewModuleRootManager">
+-    <content url="file://$MODULE_DIR$">
+-      <excludeFolder url="file://$MODULE_DIR$/temp" />
+-      <excludeFolder url="file://$MODULE_DIR$/.tmp" />
+-      <excludeFolder url="file://$MODULE_DIR$/tmp" />
+-    </content>
+-    <orderEntry type="inheritedJdk" />
+-    <orderEntry type="sourceFolder" forTests="false" />
+-  </component>
+-</module>
+\ No newline at end of file
+Index: AppTestBases/.idea/.gitignore
+===================================================================
+diff --git a/AppTestBases/.idea/.gitignore b/AppTestBases/.idea/.gitignore
+deleted file mode 100644
+--- a/AppTestBases/.idea/.gitignore	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
++++ /dev/null	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
+@@ -1,5 +0,0 @@
+-# Default ignored files
+-/shelf/
+-/workspace.xml
+-# Editor-based HTTP Client requests
+-/httpRequests/
+Index: AppTestBases/.idea/modules.xml
+===================================================================
+diff --git a/AppTestBases/.idea/modules.xml b/AppTestBases/.idea/modules.xml
+deleted file mode 100644
+--- a/AppTestBases/.idea/modules.xml	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
++++ /dev/null	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
+@@ -1,8 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="ProjectModuleManager">
+-    <modules>
+-      <module fileurl="file://$PROJECT_DIR$/.idea/AppTestBases.iml" filepath="$PROJECT_DIR$/.idea/AppTestBases.iml" />
+-    </modules>
+-  </component>
+-</project>
+\ No newline at end of file
+Index: AppTestBases/.idea/vcs.xml
+===================================================================
+diff --git a/AppTestBases/.idea/vcs.xml b/AppTestBases/.idea/vcs.xml
+deleted file mode 100644
+--- a/AppTestBases/.idea/vcs.xml	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
++++ /dev/null	(revision 109974e9f6751f6f471f95ff8aa5002a49494b23)
+@@ -1,6 +0,0 @@
+-<?xml version="1.0" encoding="UTF-8"?>
+-<project version="4">
+-  <component name="VcsDirectoryMappings">
+-    <mapping directory="$PROJECT_DIR$/.." vcs="Git" />
+-  </component>
+-</project>
+\ No newline at end of file

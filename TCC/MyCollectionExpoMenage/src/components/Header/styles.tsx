@@ -1,6 +1,7 @@
 import styled from "styled-components/native";
 import color from "color";
 import {StyleSheet} from 'react-native';
+
 import {getStatusBarHeight} from 'react-native-status-bar-height';
 
 export const BKGSafe = styled.View`
