@@ -35,8 +35,6 @@ F
 optimizeApp/Drawer.tsx,1\1\1150fe0973962969b67fd77c174982ae3bdbdd88
 X
 (optimizeApp/pages/FlatListNotOptmize.tsx,8\2\82669ffc986e396b62d1bf157bbf6af6271b98a7
-H
-optimizeApp/package.json,9\9\99eb1ca024aff5cbf542887ce1254a598dd5090a
 Q
 !optimizeApp/pages/FormOptmize.tsx,d\7\d78acb870e701fa315c103f02c54f1f6b24e26c6
 T
