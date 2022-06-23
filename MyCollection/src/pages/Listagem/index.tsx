@@ -1,6 +1,6 @@
 import style, {Container, Title, TitleBold} from './styles';
 
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {Header} from "../../components/Header";
 
 import {ButtonCard} from "../../components/ButtonCard";
@@ -14,6 +14,9 @@ import {TabNavScreenNavigationProp} from "../../Routes/PrivateNavigation";
 import {useCarrinhoStore} from '../../store/Carrinho';
 import {useMyTheme} from '../../hooks/Theme.hooks';
 import {BUTTON_CARD_HEIGHT} from '../../components/ButtonCard/styles';
+import { useHistoricoStore } from '../../store/Historico';
+import { useAuth } from '../../hooks/Auth.hooks';
+import { Input } from '../../components/Input';
 
 
 interface ItensProps {
@@ -27,12 +30,15 @@ interface ItensProps {
 
 export const Listagem: React.FC = () => {
     const [active, setActive] = useState<number>()
+    const [pesquisa, setpesquisa] = useState<String>()
     const [page, setPage] = useState<number>(1)
     const [refreshing, setRefreshing] = useState<boolean>(false)
     const [list, setList] = useState<ItensProps[]>([])
     const [last, setLast] = useState<boolean>(false)
     const toast = useToast()
     const {theme} = useMyTheme()
+    const {user} = useAuth();
+    const loadData = useHistoricoStore(state=>state.loadData)
     const getData = async (pageNumber=1)=>{
         setPage(pageNumber + 1);
         if(!last||pageNumber===1){
@@ -76,12 +82,17 @@ export const Listagem: React.FC = () => {
         await getData(1);
         setRefreshing(false);
     }
+
     useEffect(()=>{
         getData(1)
+        if (user) {
+            loadData(user.id, user.email)
+        }
     },[])
 
     const navigation = useNavigation<TabNavScreenNavigationProp>()
     const addItem = useCarrinhoStore(state=> state.addItem)
+
     const addCart = useCallback((item:ItensProps)=>() => {
         addItem({
             jogoId: item.id,
@@ -89,7 +100,7 @@ export const Listagem: React.FC = () => {
             valor: item.value
         })
     },[addItem])
-
+    
     const renderItem = useCallback( ({item}) => (
       <ButtonCard
         item={item}
@@ -101,12 +112,17 @@ export const Listagem: React.FC = () => {
         }}/>
     ),[active, addCart,setActive])
 
+    const filtro = useMemo(()=> !!pesquisa?list.filter(item=>item.name.toUpperCase().includes(pesquisa.toUpperCase())):list,[pesquisa, list])
     return (
         <Background>
             <Header backFalse>
                 <Title><TitleBold>My</TitleBold>Collection</Title>
             </Header>
             <Container>
+                <Input placeholder='Pesquisar'
+                    onChangeText={setpesquisa}
+                    value={pesquisa}
+                />
                 <FlatList<ItensProps>
                     renderItem={renderItem}
                     keyExtractor={(item) => `${item.id}`}
@@ -127,7 +143,7 @@ export const Listagem: React.FC = () => {
                       {length: BUTTON_CARD_HEIGHT, offset: BUTTON_CARD_HEIGHT * index, index}
                     )}
                     numColumns={2}
-                    data={list}
+                    data={filtro}
                 />
             </Container>
         </Background>

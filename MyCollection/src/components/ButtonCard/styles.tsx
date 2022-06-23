@@ -1,6 +1,5 @@
 import styled from "styled-components/native";
 
-
 export const BUTTON_CARD_HEIGHT = 195;
 export const Container = styled.View`
   flex: 1;
@@ -31,6 +30,7 @@ export const ImageCard = styled.ImageBackground`
   border-radius: ${props=>props.theme.measures.radius}px;
   overflow: hidden;
   border-width: 3px;
+  position: relative;
   border-color: ${props=>props.theme.colors.primary};
 `
 
@@ -40,4 +40,20 @@ export const ContainerCard = styled.View`
   align-items: center;
   justify-content: center;
   padding: 10px;
+  zindex2: 
+`
+export const Label = styled.Text`
+  background-color: ${state=> state.theme.colors.primary};
+  font-size: 18px;
+  line-heigth: 18px;
+  padding: 8px;
+  max-width: 80%;
+  text-align: center;
+  position: absolute;
+  rigth: 0;
+  botton: 8px;
+  border-botton-left-radius: ${state=> state.theme.measures.radius};
+  border-top-left-radius: ${state=> state.theme.measures.radius};
+  z-index: 1;
+  color: ${state=> state.theme.colors.background};
 `
