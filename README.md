@@ -10,7 +10,7 @@ BRUNA KÉSSIA GONÇALVES | [Ver Linkedin](https://www.linkedin.com/in/brunakgonc
 DAVID STEFANI PRADO | [Ver Linkedin](https://www.linkedin.com/in/david-stefani-prado-bb1435101/) | [Ver Trabalho](https://github.com/) | -
 HYAN KELWIN SOUZA CAMPOS | [Ver Linkedin](https://www.linkedin.com/in/hyan-kelwin-899837157/) | [Ver Trabalho](https://github.com/) | -
 JOYCE RIBEIRO | [Ver Linkedin](https://www.linkedin.com/in/joyce-ribeiro-07051616b/) | [Ver Trabalho](https://github.com/riberjoy/unifacef-trabalho-final-react-native) | OK
-JOÃO MARCOS RODRIGUES STEFANI | [Ver Linkedin](https://www.linkedin.com/in/jo%C3%A3o-marcos-stefani-168169107/) | [Ver Trabalho](https://github.com/) | -
+JOÃO MARCOS RODRIGUES STEFANI | [Ver Linkedin](https://www.linkedin.com/in/jo%C3%A3o-marcos-stefani-168169107/) | [Ver Trabalho](https://github.com/JoaoStefani/MyCollection) | -
 LEONARDO CARLONI RODRIGUES MEIRA | [Ver Linkedin](https://www.linkedin.com/in/leonardo-carloni-94864b230/) | [Ver Trabalho](https://github.com/LeoCarloni/unifacef-react-native) | OK
 LEONARDO DE CARVALHO NEVES | [Ver Linkedin](https://www.linkedin.com/in/leonardo-cneves/) | [Ver Trabalho](https://github.com/neves-c-leonardo/unifacef-react-native) | OK
 LUCAS FERREIRA GALVÃO | [Ver Linkedin](https://www.linkedin.com/in/lucas-ferreira-galv%C3%A3o-91208b121/) | [Ver Trabalho](https://github.com/) | -
