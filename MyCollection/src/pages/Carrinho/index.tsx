@@ -11,11 +11,13 @@ import {useAuth} from '../../hooks/Auth.hooks';
 import {ToastLayout} from '../../components/ToastLayout';
 import {useNavigation} from '@react-navigation/native';
 import {CartScreenTabNavigationProps} from '../../Routes/TabsNavigation';
+import { useHistoricoStore } from '../../store/Historico';
 
 export const Carrinho: React.FC = () => {
 
     const removeItemStorte = useCarrinhoStore(state => state.removeItem)
     const carrinho = useCarrinhoStore(state => state.carrinho)
+    const loadData = useHistoricoStore(state => state.loadData)
     const clear = useCarrinhoStore(state => state.clear)
     const [itemWillDeleted, setItemWillDeleted] = useState<ItemCarrinho|undefined>(undefined);
 
@@ -37,13 +39,14 @@ export const Carrinho: React.FC = () => {
                     userEmail: user.email,
                     items: carrinho
                 })
+                await loadData(user.id, user.email)
                 setload(false)
                 clear();
                 navigation.navigate('Home');
                 toast.show({
                     placement: "top-right",
                     render:({id})=>{
-                        return ToastLayout.success({id, description: 'Compras realizada com sucesso', close: toast.close})
+                        return ToastLayout.success({id, description: 'Compra realizada com sucesso', close: toast.close})
                     }
 
                 })
@@ -52,7 +55,7 @@ export const Carrinho: React.FC = () => {
                 toast.show({
                     placement: "top-right",
                     render:({id})=>{
-                        return ToastLayout.error({id, description: 'Não foi possivel realizar seu pedido, por favor relogue no sistema', close: toast.close})
+                        return ToastLayout.error({id, description: 'Não foi possivel realizar seu pedido, por favor faça login novamente', close: toast.close})
                     }
 
                 })
@@ -91,8 +94,8 @@ export const Carrinho: React.FC = () => {
                         <Title>TITULO</Title>
                         <Title maxWidth={80} align={'right'}>VALOR</Title>
                     </Box>
-                    {carrinho.map(item=>(
-                      <ItemContainer key={`item-${item.jogoId}`}>
+                    {carrinho.map((item, index)=>(
+                      <ItemContainer key={`item-${item.jogoId}-${index}`} par={(index+1)%2===0}>
                           <ActionColumn maxWidth={71}>
                               <Trash name="trash" size={24} color="black" onPress={removeItem(item)}/>
                           </ActionColumn>
