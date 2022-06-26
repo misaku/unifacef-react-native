@@ -1,6 +1,6 @@
-import style, {Container, Title, TitleBold} from './styles';
+import style, {Box, Container, Title, TitleBold} from './styles';
 
-import React, {useCallback, useEffect, useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {Header} from "../../components/Header";
 
 import {ButtonCard} from "../../components/ButtonCard";
@@ -14,6 +14,10 @@ import {TabNavScreenNavigationProp} from "../../Routes/PrivateNavigation";
 import {useCarrinhoStore} from '../../store/Carrinho';
 import {useMyTheme} from '../../hooks/Theme.hooks';
 import {BUTTON_CARD_HEIGHT} from '../../components/ButtonCard/styles';
+import { useHistoricoStore } from '../../store/Historico';
+import { useAuth } from '../../hooks/Auth.hooks';
+import { Input } from '../../components/Input';
+import {FontAwesome5, FontAwesome} from '@expo/vector-icons';
 
 
 interface ItensProps {
@@ -27,12 +31,18 @@ interface ItensProps {
 
 export const Listagem: React.FC = () => {
     const [active, setActive] = useState<number>()
+    const [pesquisa, setPesquisa] = useState<string>('')
+    const [pesquisaAtiva, setPesquisaAtiva] = useState<boolean>(false)
     const [page, setPage] = useState<number>(1)
     const [refreshing, setRefreshing] = useState<boolean>(false)
     const [list, setList] = useState<ItensProps[]>([])
     const [last, setLast] = useState<boolean>(false)
     const toast = useToast()
     const {theme} = useMyTheme()
+    const {user} = useAuth()
+    
+    const loadData = useHistoricoStore( state => state.loadData)
+
     const getData = async (pageNumber=1)=>{
         setPage(pageNumber + 1);
         if(!last||pageNumber===1){
@@ -78,6 +88,9 @@ export const Listagem: React.FC = () => {
     }
     useEffect(()=>{
         getData(1)
+        if(user){
+            loadData(user.id, user.email)
+        }
     },[])
 
     const navigation = useNavigation<TabNavScreenNavigationProp>()
@@ -101,9 +114,40 @@ export const Listagem: React.FC = () => {
         }}/>
     ),[active, addCart,setActive])
 
+    const filtro = useMemo( () => !!pesquisa?list.filter(item => item.name.toUpperCase().includes(pesquisa.toUpperCase())):list,[pesquisa, list])
+
     return (
         <Background>
-            <Header backFalse>
+            <Header 
+                left={()=>(
+                    <>
+                        <FontAwesome5 name={`search`} size={23} color={theme.colors.primary} onPress={()=>setPesquisaAtiva(true)}/>                 
+                    </>
+                )}
+                extra={()=> (
+                    <>
+                        {pesquisaAtiva&&
+                            <Box>
+                                <Input placeholder='Pesquisar' 
+                                    onChangeText={setPesquisa} 
+                                    value={pesquisa} 
+                                    color={'#fff'} 
+                                    left={() => <FontAwesome5 name={`search`} size={23} color={theme.colors.primary} style={{marginRight: 10, marginLeft: -5}}/>}
+                                    right={() => (
+                                        <FontAwesome name={`close`} 
+                                            size={23} 
+                                            color={theme.colors.danger} 
+                                            style={{marginRight: -5, marginLeft: 10}} 
+                                            onPress={()=>{
+                                                setPesquisaAtiva(false)
+                                                setPesquisa('')
+                                            }}/>)}
+                                    />
+                            </Box>
+                        }
+                    </>
+                )}
+                backFalse>
                 <Title><TitleBold>My</TitleBold>Collection</Title>
             </Header>
             <Container>
@@ -127,7 +171,7 @@ export const Listagem: React.FC = () => {
                       {length: BUTTON_CARD_HEIGHT, offset: BUTTON_CARD_HEIGHT * index, index}
                     )}
                     numColumns={2}
-                    data={list}
+                    data={filtro}
                 />
             </Container>
         </Background>

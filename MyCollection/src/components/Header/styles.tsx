@@ -9,6 +9,7 @@ export const BKGSafe = styled.View`
   width: 100%;
   min-height: ${60+getStatusBarHeight(true)}px;
   justify-content: flex-end;
+  position: relative;
 `
 export const BKG = styled.View`
   background-color: ${props => color(props.theme.colors.background).darken(0.3).hex()};
