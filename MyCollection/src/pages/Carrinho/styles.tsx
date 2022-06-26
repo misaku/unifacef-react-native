@@ -38,6 +38,7 @@ export const Title = styled.Text<TitleProps>`
 `
 interface ItemContainerProps{
     borderTop?:boolean;
+    par?:boolean;
 }
 export const ItemContainer = styled.View<ItemContainerProps>`
   align-self: stretch;
@@ -45,6 +46,7 @@ export const ItemContainer = styled.View<ItemContainerProps>`
   justify-content: center;
   align-items: center;
   flex-direction: row;
+  padding: 5px 10px;
   ${props=>(props.borderTop&&css`
     border-top-width: 3px;
     margin-top: 10px;
@@ -53,6 +55,9 @@ export const ItemContainer = styled.View<ItemContainerProps>`
     justify-content: flex-end;
     align-items: center;
     border-top-color: ${props => color(props.theme.colors.background).darken(0.3).hex()};
+  `)};
+  ${props=>(props.par&&css`
+    background-color: rgba(0,0,0,0.08);
   `)};
 `
 interface TextProps{
