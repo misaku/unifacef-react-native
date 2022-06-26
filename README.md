@@ -19,4 +19,4 @@ ODAIR PEDROSO JUNIOR | [Ver Linkedin](https://www.linkedin.com/in/odair-pedroso-
 VINICIUS MANSO CARRIJO | [Ver Linkedin](https://www.linkedin.com/in/viniciuscarrijo/) | [Ver Trabalho](https://github.com/ViniciusCarrijo/mycollection)
 THAISA HONORIO MORANDINI | [Ver Linkedin](https://www.linkedin.com/in/tha%C3%ADsa-hon%C3%B3rio-morandini-74055749/) | [Ver Trabalho](https://github.com/)
 THIAGO HENRIQUE DE MATOS | [Ver Linkedin](https://exemplo.com/) | [Ver Trabalho](https://github.com/)
-REINALDO DE PAULA SILVEIRA | [Ver Linkedin](https://www.linkedin.com/in/reinaldopsilveira/) | [Ver Trabalho](https://github.com/)
+REINALDO DE PAULA SILVEIRA | [Ver Linkedin](https://www.linkedin.com/in/reinaldopsilveira/) | [Ver Trabalho](https://github.com/rpsilveira/projeto-react-native)
