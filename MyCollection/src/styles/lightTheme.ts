@@ -1,5 +1,5 @@
 import {DefaultTheme} from 'styled-components';
-import {BACKGROUND_COLOR_WHITE, DANGER, PRIMARY, SECUNDARY_WHITE} from './colors';
+import {BACKGROUND_COLOR_WHITE, DANGER, PRIMARY, SECONDARY_WHITE} from './colors';
 
 const lightTheme: DefaultTheme = {
     measures:{
@@ -7,7 +7,7 @@ const lightTheme: DefaultTheme = {
     },
     colors: {
       primary: PRIMARY,
-      secondary: SECUNDARY_WHITE,
+      secondary: SECONDARY_WHITE,
       background: BACKGROUND_COLOR_WHITE,
       danger: DANGER,
     }
