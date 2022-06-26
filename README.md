@@ -9,7 +9,7 @@ ANILTON FRANCISCO DE MORAIS JUNIOR | [Ver Linkedin](https://www.linkedin.com/in/
 BRUNA KÉSSIA GONÇALVES | [Ver Linkedin](https://www.linkedin.com/in/brunakgoncalves/) | [Ver Trabalho](https://github.com/brugoncalves/unifacef-react-native-)
 DAVID STEFANI PRADO | [Ver Linkedin](https://www.linkedin.com/in/david-stefani-prado-bb1435101/) | [Ver Trabalho](https://github.com/)
 HYAN KELWIN SOUZA CAMPOS | [Ver Linkedin](https://www.linkedin.com/in/hyan-kelwin-899837157/) | [Ver Trabalho](https://github.com/)
-JOYCE RIBEIRO | [Ver Linkedin](https://www.linkedin.com/in/joyce-ribeiro-07051616b/) | [Ver Trabalho](https://github.com/)
+JOYCE RIBEIRO | [Ver Linkedin](https://www.linkedin.com/in/joyce-ribeiro-07051616b/) | [Ver Trabalho](https://github.com/riberjoy/unifacef-trabalho-final-react-native)
 JOÃO MARCOS RODRIGUES STEFANI | [Ver Linkedin](https://www.linkedin.com/in/jo%C3%A3o-marcos-stefani-168169107/) | [Ver Trabalho](https://github.com/)
 LEONARDO CARLONI RODRIGUES MEIRA | [Ver Linkedin](https://www.linkedin.com/in/leonardo-carloni-94864b230/) | [Ver Trabalho](https://github.com/LeoCarloni/unifacef-react-native)
 LEONARDO DE CARVALHO NEVES | [Ver Linkedin](https://www.linkedin.com/in/leonardo-cneves/) | [Ver Trabalho](https://github.com/)
