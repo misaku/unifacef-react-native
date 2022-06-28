@@ -8,7 +8,7 @@ ANDRE LUIZ GONÇALVES SILVA | [Ver Linkedin](https://www.linkedin.com/in/andre-g
 ANILTON FRANCISCO DE MORAIS JUNIOR | [Ver Linkedin](https://www.linkedin.com/in/anilton-morais-junior-a194b142/) | [Ver Trabalho](https://github.com/AniltonMoraisJr/TrabalhoFinalReactNative) | OK
 BRUNA KÉSSIA GONÇALVES | [Ver Linkedin](https://www.linkedin.com/in/brunakgoncalves/) | [Ver Trabalho](https://github.com/brugoncalves/unifacef-react-native-) | OK
 DAVID STEFANI PRADO | [Ver Linkedin](https://www.linkedin.com/in/david-stefani-prado-bb1435101/) | [Ver Trabalho](https://github.com/DavidPrado/unifacef-react-native) | OK
-HYAN KELWIN SOUZA CAMPOS | [Ver Linkedin](https://www.linkedin.com/in/hyan-kelwin-899837157/) | [Ver Trabalho](https://github.com/) | -
+HYAN KELWIN SOUZA CAMPOS | [Ver Linkedin](https://www.linkedin.com/in/hyan-kelwin-899837157/) | [Ver Trabalho](https://github.com/hyankelwin/my-collection-app) | OK
 JOYCE RIBEIRO | [Ver Linkedin](https://www.linkedin.com/in/joyce-ribeiro-07051616b/) | [Ver Trabalho](https://github.com/riberjoy/unifacef-trabalho-final-react-native) | OK
 JOÃO MARCOS RODRIGUES STEFANI | [Ver Linkedin](https://www.linkedin.com/in/jo%C3%A3o-marcos-stefani-168169107/) | [Ver Trabalho](https://github.com/JoaoStefani/MyCollection) | OK
 LEONARDO CARLONI RODRIGUES MEIRA | [Ver Linkedin](https://www.linkedin.com/in/leonardo-carloni-94864b230/) | [Ver Trabalho](https://github.com/LeoCarloni/unifacef-react-native) | OK
