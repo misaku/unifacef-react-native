@@ -18,6 +18,6 @@ LUCAS LAURO COSTA | [Ver Linkedin](https://www.linkedin.com/in/lucas-lauro-b23ba
 ODAIR PEDROSO JUNIOR | [Ver Linkedin](https://www.linkedin.com/in/odair-pedroso-junior-bb70a6155/) | [Ver Trabalho](https://github.com/odair-pedroso/react-native) | OK
 VINICIUS MANSO CARRIJO | [Ver Linkedin](https://www.linkedin.com/in/viniciuscarrijo/) | [Ver Trabalho](https://github.com/ViniciusCarrijo/mycollection) | OK
 THAISA HONORIO MORANDINI | [Ver Linkedin](https://www.linkedin.com/in/tha%C3%ADsa-hon%C3%B3rio-morandini-74055749/) | [Ver Trabalho](https://github.com/) | -
-THIAGO HENRIQUE DE MATOS | [Ver Linkedin](https://exemplo.com/](https://www.linkedin.com/in/thiago-h-matos/)) | [Ver Trabalho](https://github.com/) | -
+THIAGO HENRIQUE DE MATOS | [Ver Linkedin](https://exemplo.com/](https://www.linkedin.com/in/thiago-h-matos/)) | [Ver Trabalho](https://github.com/ThiagoHMatos/unifacef-react-native-1) | OK
 REINALDO DE PAULA SILVEIRA | [Ver Linkedin](https://www.linkedin.com/in/reinaldopsilveira/) | [Ver Trabalho](https://github.com/rpsilveira/projeto-react-native) | OK
 
